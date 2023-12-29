@@ -1,4 +1,4 @@
-# Experiment--03-Half-Subtractor-and-Full-subtractor
+# Experiment--04-Half-Subtractor-and-Full-subtractor
 ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 ## AIM:
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -27,7 +27,9 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
 
-
+1.Connect the supply (+5V) to the circuit.
+2.Switch ON the main switch.
+3.If the output is 1, then the led glows
 
 Write the detailed procedure here 
 
@@ -35,20 +37,56 @@ Write the detailed procedure here
 ## Program:
 /*
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: ROOP SAGAR S L
+RegisterNumber:  212223040175
 */
+
+1. Program to design a half subtractor:
+
+module ex4(a,b,diff,borr);
+input a,b;
+output diff,borr;
+assign diff=(a^b);
+assign borr=((~a)&b);
+endmodule 
+
+2. Program to design a full subtractor:
+
+module ex41(a,b,bin,diff,borr);
+input a,b,bin;
+output diff,borr;
+assign diff=a^b^bin;
+assign borr=((~a)&b)|(b&bin)|((~a)&bin);
+endmodule 
 
 ## Output:
 
 ## Truthtable
+HALF SUBTRACTOR:
 
+![Screenshot 2023-12-29 145429](https://github.com/Roopsagar23001830/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/145972515/c08feeeb-6ee3-4aed-83eb-9f80685440f3)
 
+FULL SUBTRACTOR:
+
+![Screenshot 2023-12-29 145537](https://github.com/Roopsagar23001830/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/145972515/c24e79af-271a-446b-8630-879b000a7311)
 
 ##  RTL realization
+HALF SUBTRACTOR:
 
+![Screenshot 2023-12-29 145051](https://github.com/Roopsagar23001830/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/145972515/98cd5758-b666-4c3c-ba96-62698fec7fbd)
 
-## Timing diagram 
+FULL SUBTRACTOR:
+
+![Screenshot 2023-12-29 144023](https://github.com/Roopsagar23001830/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/145972515/b61e1e58-d83d-43c0-a580-e440fe1a2ffe)
+
+## OUTPUT WAVEFORM
+HALF SUBTRACTOR:
+
+![Screenshot 2023-12-29 145229](https://github.com/Roopsagar23001830/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/145972515/d28df082-5a61-4f1c-8027-beaf957dbb07)
+
+FULL SUBTRACTOR:
+
+![Screenshot 2023-12-29 144244](https://github.com/Roopsagar23001830/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/145972515/8f2dd2c7-7bc5-416e-8c14-f4f77cda0958)
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
